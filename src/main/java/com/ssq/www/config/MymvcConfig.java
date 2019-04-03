@@ -1,6 +1,7 @@
 package com.ssq.www.config;
 
 
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -8,8 +9,8 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.ssq.www.config.interceptor.MyFilter;
+import com.ssq.www.config.interceptor.MyInterceptor;
 import com.ssq.www.config.interceptor.MyListener;
-import com.ssq.www.config.interceptor.Myinterptor;
 
 /*springmvc的扩展类  保留自动配置
 * @EnableWevMvc注解会让springmvc的自动配置失效从而我们由自己全面来配置
@@ -38,8 +39,8 @@ public class MymvcConfig extends WebMvcConfigurerAdapter {
             }
 
             @Override
-            public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(new Myinterptor()).addPathPatterns("/");
+            public void addInterceptors(InterceptorRegistry registry) {//设置拦截器
+                registry.addInterceptor(new MyInterceptor()).addPathPatterns("/");
             }
 
         };
@@ -50,8 +51,17 @@ public class MymvcConfig extends WebMvcConfigurerAdapter {
 
         @Bean
     public MyFilter init() {
-        return new MyFilter();
+        MyFilter myFilter = new MyFilter();
+		return myFilter;
     }
+        
+/*        @Bean
+    public MyFilter init() {
+        	FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+        	filterRegistrationBean.setFilter(new MyFilter());
+        return (MyFilter) filterRegistrationBean.getFilter();
+    }*/
+        
         @Bean
     public MyListener initL(){
         return  new MyListener();
