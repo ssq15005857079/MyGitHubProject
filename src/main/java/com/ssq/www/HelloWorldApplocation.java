@@ -3,6 +3,7 @@ package com.ssq.www;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
 /**
@@ -28,6 +29,7 @@ import org.springframework.context.annotation.ImportResource;
 // @ServletComponentScan、
 //    @ImportResource(locations = {"xxx.xml"."xxx.xml"})   导入配置文件
 @SpringBootApplication
+@ServletComponentScan
 public class HelloWorldApplocation {
     public static void main(String[] args) {
         SpringApplication.run(HelloWorldApplocation.class,args);
