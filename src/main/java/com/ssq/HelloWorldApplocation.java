@@ -1,6 +1,8 @@
-package com.ssq.www;
+package com.ssq;
 
 
+
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -30,6 +32,8 @@ import org.springframework.context.annotation.ImportResource;
 //    @ImportResource(locations = {"xxx.xml"."xxx.xml"})   导入配置文件
 @SpringBootApplication
 @ServletComponentScan
+//这个注解添加了自动会将该包下面的所有类加上@Mapper注解
+//@MapperScan(value="com.ssq.www")
 public class HelloWorldApplocation {
     public static void main(String[] args) {
         SpringApplication.run(HelloWorldApplocation.class,args);

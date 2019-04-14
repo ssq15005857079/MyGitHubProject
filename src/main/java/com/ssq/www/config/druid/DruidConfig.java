@@ -1,4 +1,4 @@
-package com.ssq.www.config.druid;
+/*package com.ssq.www.config.druid;
 
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
@@ -25,7 +25,9 @@ public class DruidConfig {
 	@ConfigurationProperties(prefix="spring.datasource")
 	@Bean
 	 public DataSource druid(){
-		 return (DataSource) new DruidDataSource();
+		 DruidDataSource druidDataSource = new DruidDataSource();
+		 druidDataSource.setDbType("com.alibaba.druid.pool.DruidDataSource");
+		return (DataSource) druidDataSource;
 	 }
 	//配置监控
 //	1.配置后台管理的servlet
@@ -33,10 +35,11 @@ public class DruidConfig {
 	public ServletRegistrationBean statViewServlet(){
 		ServletRegistrationBean servletRegistrationBean = 
 				new ServletRegistrationBean(new StatViewServlet(),"/druid/*");
+		servletRegistrationBean.setUrlMappings(Arrays.asList("/myduid"));
 		HashMap<String, String> hashMap = new HashMap<>();
-		hashMap.put("jmxUsername", "ssq");
-		hashMap.put("jmxPassword", "ssq");
-		hashMap.put("jmxUrl", "localhost");//白名单  默认所有
+		hashMap.put("loginUsername", "ssq");
+		hashMap.put("loginPassword", "ssq");
+		hashMap.put("allow", "localhost");//白名单  默认所有
 		//hashMap.put("deny", "192.168.189.129");//黑名单  默认所有
 		servletRegistrationBean.setInitParameters(hashMap);
 		return servletRegistrationBean;
@@ -53,3 +56,4 @@ public class DruidConfig {
 		return filterRegistrationBean;
 	}
 }
+*/

@@ -4,6 +4,8 @@ package com.ssq.www;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
+import com.ssq.HelloWorldApplocation;
+
 
 /**
  * 来设置外部tomcat容器
