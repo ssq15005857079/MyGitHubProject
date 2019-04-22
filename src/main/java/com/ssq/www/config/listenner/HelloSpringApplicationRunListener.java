@@ -1,17 +1,19 @@
 package com.ssq.www.config.listenner;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringApplicationRunListener;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.ConfigurableEnvironment;
 /**
  * 自定义SpringApplicationRunListener
  * @author ssq
  *下午4:47:18
  */
-@Configuration
 public class HelloSpringApplicationRunListener implements SpringApplicationRunListener{
-
+	public HelloSpringApplicationRunListener(SpringApplication application, String[] args) {
+		
+	}
+	
 	@Override
 	public void starting() {
 		System.out.println("HelloSpringApplicationRunListener-------starting-----");
