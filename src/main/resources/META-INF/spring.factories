@@ -2,5 +2,5 @@
 org.springframework.context.ApplicationContextInitializer=\
 com.ssq.www.config.listenner.HelloApplicationContextInitralizer
 
-com.ssq.www.config.listenner.SpringApplicationRunListener=\
-com.ssq.www.config.listenner.HelloApplicationRunner
+org.springframework.boot.SpringApplicationRunListener=\
+com.ssq.www.config.listenner.HelloSpringApplicationRunListener
