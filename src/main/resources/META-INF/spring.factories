@@ -1,6 +1,11 @@
 # Initializers
 org.springframework.context.ApplicationContextInitializer=\
 com.ssq.www.config.listenner.HelloApplicationContextInitralizer
-
+#SpringApplicationRunListener
 org.springframework.boot.SpringApplicationRunListener=\
 com.ssq.www.config.listenner.HelloSpringApplicationRunListener
+
+
+# Auto Configure  自定义配置自动配置类
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.ssq.www.config.autoconfig.HelloServiceAutoConfiguration
