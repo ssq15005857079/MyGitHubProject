@@ -27,26 +27,26 @@ public class PropertiesReadDemo {
     private Integer age;
 
     private Map classGrade;
-    @Value("${test11}")
-    private String testsss;
-    public String getTestsss() {
+/*    @Value("${test11}")
+    private String testsss;*/
+/*    public String getTestsss() {
         return testsss;
-    }
+    }*/
     @Override
     public String toString() {
         return "PropertiesReadDemo{" +
                 "username='" + username + '\'' +
                 ", age=" + age +
                 ", classGrade=" + classGrade +
-                ", testsss=" + testsss +
+                ", testsss=" + /*testsss*/ +
                 '}';
     }
 
 
-
+/*
     public void setTestsss(String testsss) {
         this.testsss = testsss;
-    }
+    }*/
 
 
 
